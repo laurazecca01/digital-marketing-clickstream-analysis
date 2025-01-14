@@ -60,8 +60,7 @@ The dataset provided in the assignement included:
   - Purchase intent indicators
 
 ## Technologies Used
-- Pyhon
-- Libraries: pandas, matplotlib/seaborn, plotly, scikit-learn, markovclick, statsmodels
+- Pyhon Libraries: pandas, matplotlib/seaborn, plotly, scikit-learn, markovclick, statsmodels
   
 ## Key Findings
 1. **Session Patterns**
