@@ -59,10 +59,10 @@ The dataset provided in the assignement included:
   - Page category transition matrices
   - Purchase intent indicators
 
-## Technologies Used
+### Technologies Used
 - Pyhon Libraries: pandas, matplotlib/seaborn, plotly, scikit-learn, markovclick, statsmodels
   
-## Key Findings
+## Key Findings from analysis
 1. **Session Patterns**
    - Peak user activity occurs on Monday evenings
    - Optimal session duration for purchases: 30 minutes to 1 hour
