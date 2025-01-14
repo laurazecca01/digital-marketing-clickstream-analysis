@@ -1,107 +1,84 @@
-# Digital Marketing Analytics Project
+# E-commerce Clickstream Analysis 💻
 
-## Overview
+In this project I analyzed user behavior and conversion patterns of an e-commerce platform that offers five products across different categories. The analysis focuses on understanding user sessions, review impacts, and purchase patterns through various methods including time decay attribution, Shapley values, and Markov chain analysis.
 
-This project is a comprehensive analysis of digital marketing strategies and performance metrics. It focuses on deriving actionable insights from data related to web traffic, social media engagement, email marketing, and ad campaigns. The project was created as a case study to demonstrate how data-driven decision-making can optimize marketing efforts.
+## Data Description
+The dataset provided in the assignement included:
+- User session IDs
+- Timestamps
+- Page categories
+- Product information
+- Review types (customer, video, celebrity)
+- Purchase indicators
+  
+## Analytical methods
 
-## Objectives
+### 1. Attribution Modeling
+- **Last-Click Attribution**: Assigns conversion credit to the final touchpoint before purchase
+- **Time Decay Attribution**: Weights touchpoints based on temporal proximity to conversion and implements exponential decay function with one-hour half-life
 
-The main goals of this project were:
-- To analyze digital marketing performance metrics across multiple channels.
-- To identify trends, patterns, and actionable insights for campaign optimization.
-- To visualize data for better understanding and communication with stakeholders.
+### 2. Shapley Value Analysis
+- **Game Theory Application**:
+  - Treats marketing touchpoints as players in cooperative game
+  - Calculates marginal contribution of each touchpoint
+  - Considers all possible touchpoint combinations
 
-## Key Features
+### 3. Markov Chain Analysis
+- **State Transition Matrix**:
+  - Pages/actions as states
+  - Transition probabilities between states
+  - Absorption states: Purchase and Exit
+- **Key Metrics**:
+  - Conversion probability for each path
+  - Expected number of steps to conversion
+  - Path efficiency scoring
 
-1. **Data Collection**:
-   - Aggregated data from various digital marketing platforms (e.g., Google Analytics, social media platforms, and email marketing tools).
-   - Combined structured and unstructured data sources for a holistic view.
+### 4. Linear Regression Models
+- **Feature Engineering**:
+  - Review type presence indicators
+  - Session duration binning
+  - Click sequence encoding
 
-2. **Data Cleaning & Preprocessing**:
-   - Handled missing data, outliers, and inconsistencies in the raw datasets.
-   - Normalized data for compatibility across different platforms.
+### 5. User Path Analysis
+- **Sankey Diagram Visualization**:
+  - Node: Page/action states
+  - Edge weights: User flow volume
+  - Time decay incorporation
+- **Path Processing**:
+  - Sequential path extraction
+  - Temporal alignment
+  - Flow volume calculation
 
-3. **Exploratory Data Analysis (EDA)**:
-   - Conducted in-depth analysis to identify key performance indicators (KPIs) and trends.
-   - Highlighted metrics like CTR, ROI, bounce rates, and conversion rates.
+### 6. Session Analysis
+- **Time-based Segmentation**:
+  - Custom time bins for day/hour analysis
+  - Session duration calculation
+  - Purchase probability by time segment
+- **Click Pattern Analysis**:
+  - Click sequence extraction
+  - Page category transition matrices
+  - Purchase intent indicators
 
-4. **Data Visualization**:
-   - Created interactive dashboards using tools like Tableau and Power BI.
-   - Used Python libraries like Matplotlib and Seaborn for static visualizations.
+## Technologies Used
+- Pyhon
+- Libraries: pandas, matplotlib/seaborn, plotly, scikit-learn, markovclick, statsmodels
+  
+## Key Findings
+1. **Session Patterns**
+   - Peak user activity occurs on Monday evenings
+   - Optimal session duration for purchases: 30 minutes to 1 hour
+   - Users make approximately 18 clicks prior to purchase
 
-5. **Predictive Modeling**:
-   - Built models to predict campaign performance based on historical data.
-   - Evaluated models for accuracy using metrics such as RMSE and R².
+2. **Review Impact**
+   - Customer reviews show highest conversion impact
+   - Combined effect of celebrity and customer reviews yields 1.34x effectiveness
+   - Time decay analysis reveals gradual buildup of review influence
 
-6. **Optimization Recommendations**:
-   - Provided strategic recommendations for ad budget allocation and audience targeting.
-   - Suggested content improvements based on audience engagement insights.
+3. **User Behavior**
+   - Homepage and product categories receive highest traffic
+   - Clear patterns in user navigation between reviews and product pages
+   - Most users return to homepage regardless of starting point
 
-## Tools and Technologies
 
-- **Programming Languages**: Python (Pandas, Numpy, Scikit-learn, Matplotlib, Seaborn)
-- **Visualization Tools**: Tableau, Power BI
-- **Data Sources**: Google Analytics, social media platforms, email marketing tools
-- **Modeling**: Regression analysis, clustering, and time-series forecasting
 
-## Deliverables
 
-- Cleaned and preprocessed datasets.
-- Comprehensive EDA reports.
-- Visualizations showcasing key insights.
-- Predictive models with performance metrics.
-- Strategic recommendations for improving marketing performance.
-
-## How to Use This Repository
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/digital-marketing-analytics.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd digital-marketing-analytics
-   ```
-3. Install required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Explore the notebooks and reports:
-   - `data_cleaning.ipynb`: Details the data preprocessing steps.
-   - `eda.ipynb`: Contains exploratory analysis and visualizations.
-   - `predictive_modeling.ipynb`: Showcases predictive models.
-   - `recommendations.md`: Provides insights and recommendations.
-
-## Project Structure
-
-```
-digital-marketing-analytics/
-│
-├── data/
-│   ├── raw/                # Raw datasets
-│   ├── processed/          # Cleaned datasets
-│
-├── notebooks/
-│   ├── data_cleaning.ipynb # Data cleaning and preprocessing
-│   ├── eda.ipynb           # Exploratory data analysis
-│   ├── predictive_modeling.ipynb # Predictive modeling
-│
-├── reports/
-│   ├── eda_report.pdf      # Detailed EDA report
-│   ├── recommendations.md  # Marketing recommendations
-│
-├── requirements.txt        # Dependencies
-├── README.md               # Project documentation
-```
-
-## Results and Insights
-
-- **Trends Identified**: Seasonal patterns in user engagement and conversions.
-- **High-Performing Channels**: Social media campaigns showed the highest ROI.
-- **Optimization Opportunities**: Reducing ad spend on underperforming campaigns while reallocating to high-conversion channels.
-
-## Future Work
-
-- Expand analysis to include competitor benchmarking.
-- Incorporate A/B testing results for campaign iterations.
-- Automate data collection and reporting processes.
