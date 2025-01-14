@@ -1,6 +1,6 @@
 # E-commerce Clickstream Analysis 💻
 
-In this project I analyzed user behavior and conversion patterns of an e-commerce platform that offers five products across different categories. The analysis focuses on understanding user sessions, review impacts, and purchase patterns through various methods including time decay attribution, Shapley values, and Markov chain analysis.
+In this project I analyzed user behavior and conversion patterns of an e-commerce platform that offers five products across different categories. The analysis focuses on understanding user sessions, review impacts, and purchase patterns through various methods including time decay attribution, Shapley values, and Markov chain analysis. (to review final visualations view PDF)
 
 ## Data Description
 The dataset provided in the assignement included:
